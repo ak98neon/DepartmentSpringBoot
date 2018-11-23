@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List Department</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name Department</th>
+    </tr>
+    <tr th:each="department : ${department}">
+        <td th:utext="${department.id}"></td>
+        <td th:utext="${department.name}"></td>
+    </tr>
+</table>
+</body>
+</html>

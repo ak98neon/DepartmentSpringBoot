@@ -1,0 +1,11 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background: lightblue;
+    margin: 0 auto;
+    width: 350px;
+    height: 250px;
+}
