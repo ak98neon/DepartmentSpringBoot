@@ -5,14 +5,20 @@
     <title>List Department</title>
 </head>
 <body>
+<a th:href="@{/addDepartment}">Add Department</a>
 <table>
     <tr>
-        <th>ID</th>
+        <th>#</th>
         <th>Name Department</th>
+        <th>Update</th>
+        <th>Delete</th>
     </tr>
     <tr th:each="department : ${department}">
         <td th:utext="${department.id}"></td>
         <td th:utext="${department.name}"></td>
+        <td><a th:href="@{/editDepartment/{id}(id=${department.id})}">Edit</a></td>
+        <td><a th:href="@{/deleteDepartment/{id}(id=${department.id})}">Delete</a></td>
+        <td><a th:href="@{/listEmployee/{id}(id=${department.id})}">List Employee</a></td>
     </tr>
 </table>
 </body>

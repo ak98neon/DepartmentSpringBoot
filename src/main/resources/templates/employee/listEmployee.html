@@ -1,10 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Emoloyee List</title>
 </head>
 <body>
-
+<a th:href="@{/addEmployee}">Add Employee</a>
+<table>
+    <tr>
+        <th>#</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+        <th>Mail</th>
+        <th>Date of create</th>
+        <th>Department ID</th>
+        <th>Update</th>
+        <th>Delete</th>
+        <th>List Employee</th>
+    </tr>
+    <tr th:each="employee : ${employee}">
+        <td th:utext="${employee.id}"></td>
+        <td th:utext="${employee.firstName}"></td>
+        <td th:utext="${employee.lastName}"></td>
+        <td th:utext="${employee.age}"></td>
+        <td th:utext="${employee.mail}"></td>
+        <td th:utext="${employee.dateOfCreate}"></td>
+        <td th:utext="${employee.departmentId}"></td>
+        <td><a th:href="@{/editEmployee/{id}(id=${employee.id})}">Edit</a></td>
+        <td><a th:href="@{/deleteEmployee/{id}(id=${employee.id})}">Delete</a></td>
+        <td><a th:href="@{/listEmployee/{id}(id=${employee.id})}">List Employee</a></td>
+    </tr>
+</table>
 </body>
 </html>

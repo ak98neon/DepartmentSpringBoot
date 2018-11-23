@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Edit Department</title>
 </head>
 <body>
-
+<form action="#" th:action="@{/addDepartment}" method="post">
+    <label for="name">Name:</label>
+    <input id="name" type="text" th:name="name" placeholder="newName"/>
+    <input th:name="id" th:value="${id}" type="hidden"/>
+    <button type="submit" name="editDepartment">Edit Department</button>
+</form>
 </body>
 </html>
