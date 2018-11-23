@@ -5,6 +5,7 @@ import com.ak98neon.departmentspringboot.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
@@ -24,14 +25,15 @@ public class EmployeeServiceImpl implements IEmployeeService {
     @Override
     public void editEmployeeById(Long id, String firstName, String lastName, int age, String mail) {
         Employee employee = employeeRepository.getOne(id);
-        employee.setFirstName(firstName);
-        employee.setLastName(lastName);
+        employee.setFirst(firstName);
+        employee.setLast(lastName);
         employee.setAge(age);
         employee.setMail(mail);
         employeeRepository.save(employee);
     }
 
     @Override
+    @Transactional
     public void deleteEmployeeById(Long id) {
         employeeRepository.deleteEmployeeById(id);
     }
@@ -42,7 +44,7 @@ public class EmployeeServiceImpl implements IEmployeeService {
     }
 
     @Override
-    public List<Employee> selectAllEmployeeByDepartmentId(Long depId) {
-        return employeeRepository.findAll();
+    public List<Employee> findAllByDepartmentId(Long depId) {
+        return employeeRepository.findAllByDepartmentId(depId);
     }
 }

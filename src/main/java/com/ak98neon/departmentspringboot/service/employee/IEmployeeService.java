@@ -13,5 +13,5 @@ public interface IEmployeeService {
 
     Employee selectEmployeeById(final Long id);
 
-    List<Employee> selectAllEmployeeByDepartmentId(final Long depId);
+    List<Employee> findAllByDepartmentId(final Long depId);
 }
