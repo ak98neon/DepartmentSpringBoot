@@ -18,7 +18,7 @@ public class DepartmentController {
     private DepartmentServiceImpl departmentService;
 
     @Value("redirect:/listDepartment")
-    private String REDIRECT;ª
+    private String REDIRECT;
 
 
     @Autowired
