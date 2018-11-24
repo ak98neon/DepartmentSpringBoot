@@ -30,30 +30,30 @@ public class DepartmentController {
     }
 
     @GetMapping("/addDepartment")
-    public String addDepartment(ModelMap modelMap) {
+    public String addDepartment() {
         return "/department/addDepartment";
     }
 
     @PostMapping("/addDepartment")
-    public String saveDepartment(@RequestParam(value = "name") String name) {
+    public String saveDepartment(@RequestParam(value = "name") final String name) {
         departmentService.saveDepartment(new Department(name));
         return REDIRECT_LIST_DEPARTMENT;
     }
 
     @GetMapping("/editDepartment/{id}")
-    public String editDepartment(@PathVariable("id") Long id, ModelMap modelMap) {
+    public String editDepartment(@PathVariable("id") final Long id, final ModelMap modelMap) {
         modelMap.addAttribute("id", id);
         return "/department/editDepartment";
     }
 
     @PostMapping("/editDepartment")
-    public String saveEditDepartment(@RequestParam("id") Long id, @RequestParam(value = "name") String name) {
+    public String saveEditDepartment(@RequestParam("id") final Long id, @RequestParam(value = "name") final String name) {
         departmentService.editDepartmentById(id, name);
         return REDIRECT_LIST_DEPARTMENT;
     }
 
     @GetMapping("/deleteDepartment/{id}")
-    public String deleteDepartment(@PathVariable("id") Long id) {
+    public String deleteDepartment(@PathVariable("id") final Long id) {
         departmentService.deleteDepartmentById(id);
         return REDIRECT_LIST_DEPARTMENT;
     }
