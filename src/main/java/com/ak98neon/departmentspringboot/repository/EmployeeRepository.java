@@ -8,7 +8,7 @@ import java.util.List;
 
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
-    List<Employee> findAllByDepartmentId(long departmentId);
+    List<Employee> findAllByDepartmentId(final long departmentId);
 
-    void deleteEmployeeById(Long id);
+    void deleteEmployeeById(final Long id);
 }
