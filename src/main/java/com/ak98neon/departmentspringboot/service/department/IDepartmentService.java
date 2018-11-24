@@ -11,7 +11,7 @@ public interface IDepartmentService {
 
     void deleteDepartmentById(final Long id);
 
-    Department getDepartmentById(final Long id);
+    Department findAllByDepartmentId(final Long id);
 
     List<Department> getAllDepartment();
 }
