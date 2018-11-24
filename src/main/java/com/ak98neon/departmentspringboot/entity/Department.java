@@ -10,19 +10,17 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
 @Data
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "department")
 public class Department {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "name", nullable = false)
+    @Column(nullable = false)
     private String name;
 
     public Department(String name) {
