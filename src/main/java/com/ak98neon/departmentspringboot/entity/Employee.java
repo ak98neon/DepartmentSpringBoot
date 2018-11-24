@@ -10,34 +10,29 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
 @Data
 @EqualsAndHashCode
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "employee")
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "first", nullable = false)
-    private String first;
-    @Column(name = "last")
-    private String last;
-    @Column(name = "age")
+    @Column(nullable = false)
+    private String firstName;
+    private String lastName;
     private int age;
-    @Column(name = "mail")
     private String mail;
-    @Column(name = "depid", nullable = false)
-    private Long depid;
+    @Column(nullable = false)
+    private Long departmentId;
 
     public Employee(String firstName, String lastName, int age, String mail, Long departmentId) {
-        this.first = firstName;
-        this.last = lastName;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.age = age;
         this.mail = mail;
-        this.depid = departmentId;
+        this.departmentId = departmentId;
     }
 }
