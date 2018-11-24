@@ -4,8 +4,16 @@ body {
 }
 
 .container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
     background: lightblue;
     margin: 0 auto;
     width: 350px;
     height: 250px;
+}
+
+.container .content a {
+    text-decoration: none;
 }
