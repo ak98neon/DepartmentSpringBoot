@@ -5,9 +5,9 @@
     <title>Edit Department</title>
 </head>
 <body>
-<form action="#" th:action="@{/addDepartment}" method="post">
-    <label for="name">Name:</label>
-    <input id="name" type="text" th:name="name" placeholder="newName"/>
+<form action="#" th:action="@{/editDepartment}" method="post">
+    <label for="name" th:name="name">Name:</label>
+    <input id="name" type="text" th:name="name" placeholder="Enter new name"/>
     <input th:name="id" th:value="${id}" type="hidden"/>
     <button type="submit" name="editDepartment">Edit Department</button>
 </form>
