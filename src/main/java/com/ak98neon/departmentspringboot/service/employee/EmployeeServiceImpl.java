@@ -18,33 +18,33 @@ public class EmployeeServiceImpl implements IEmployeeService {
     }
 
     @Override
-    public void saveEmployee(Employee employee) {
+    public void saveEmployee(final Employee employee) {
         employeeRepository.save(employee);
     }
 
     @Override
-    public void editEmployeeById(Long id, String firstName, String lastName, int age, String mail) {
+    public void editEmployeeById(final Long id, final String firstName, final String lastName, final int age, final String mail) {
         Employee employee = employeeRepository.getOne(id);
-        employee.setFirst(firstName);
-        employee.setLast(lastName);
+        employee.setFirstName(firstName);
+        employee.setLastName(lastName);
         employee.setAge(age);
         employee.setMail(mail);
-        employeeRepository.save(employee);
+        employeeRepository.saveAndFlush(employee);
     }
 
     @Override
     @Transactional
-    public void deleteEmployeeById(Long id) {
+    public void deleteEmployeeById(final Long id) {
         employeeRepository.deleteEmployeeById(id);
     }
 
     @Override
-    public Employee selectEmployeeById(Long id) {
+    public Employee selectEmployeeById(final Long id) {
         return employeeRepository.getOne(id);
     }
 
     @Override
-    public List<Employee> findAllByDepartmentId(Long depId) {
+    public List<Employee> findAllByDepartmentId(final Long depId) {
         return employeeRepository.findAllByDepartmentId(depId);
     }
 }
