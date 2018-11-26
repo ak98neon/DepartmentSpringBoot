@@ -25,7 +25,6 @@
         <td th:utext="${employee.lastName}"></td>
         <td th:utext="${employee.age}"></td>
         <td th:utext="${employee.mail}"></td>
-        <td th:utext="${employee.dateOfCreate}"></td>
         <td th:utext="${employee.departmentId}"></td>
         <td><a th:href="@{/editEmployee/{id}(id=${employee.id})}">Edit</a></td>
         <td><a th:href="@{/deleteEmployee/{id}(id=${employee.id})}">Delete</a></td>
